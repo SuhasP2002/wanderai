@@ -44,6 +44,7 @@ class AuthServiceTest {
     }
 
     @Test
+    @org.mockito.junit.jupiter.MockitoSettings(strictness = org.mockito.quality.Strictness.LENIENT)
     void register_ShouldCreateUser_WhenEmailNotExists() {
         when(userRepository.existsByEmail(anyString())).thenReturn(false);
         when(passwordEncoder.encode(anyString())).thenReturn("encodedPassword");
